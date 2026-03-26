@@ -1,0 +1,254 @@
+:root {
+  --color-primary: #ffb6c1; /* pastel pink */
+  --color-secondary: #fdf6e3; /* cream */
+  --color-tertiary: #f5f5dc; /* beige */
+  --color-accent: #d2a679; /* light chocolate brown */
+  --color-accent-dark: #8b5a2b; /* dark chocolate */
+  
+  --color-text: #4a4a4a;
+  --color-text-light: #7a7a7a;
+  --color-white: #ffffff;
+  --color-bg: #fffbf9;
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-lg: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff9aab 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 182, 193, 0.6);
+}
+
+.btn-secondary {
+  background-color: var(--color-accent);
+  color: white;
+  box-shadow: 0 4px 15px rgba(210, 166, 121, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--color-primary);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--color-text);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.icon-btn:hover {
+  background-color: var(--color-tertiary);
+  color: var(--color-accent-dark);
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.page-wrapper {
+  padding: 40px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 900px) {
+  .grid-cols-3, .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Rating Stars */
+.stars {
+  color: #ffc107;
+  display: flex;
+  gap: 2px;
+}
+
+/* Input Styles */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e0e0e0;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);
+}
+
+.admin-sidebar {
+  background-color: #1a1a2e;
+  color: #fff;
+}
