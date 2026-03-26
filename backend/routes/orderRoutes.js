@@ -21,7 +21,7 @@ router.post('/', protect, async (req, res) => {
       shippingPrice,
       totalPrice,
     });
-
+// Save the order to the database
     const createdOrder = await order.save();
     res.status(201).json(createdOrder);
   }
