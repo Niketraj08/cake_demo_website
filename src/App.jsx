@@ -10,6 +10,8 @@ import Checkout from './pages/Checkout';
 import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 
+
+// Main App component that sets up routing and layout
 function App() {
   return (
     <BrowserRouter>
