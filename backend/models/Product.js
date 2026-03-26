@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Product schema defining the structure of product documents in MongoDB
 const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true },
